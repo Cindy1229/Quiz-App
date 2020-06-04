@@ -7,7 +7,10 @@ const nextButton=document.getElementById('next-btn');
 let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener('click', startGame);
-
+nextButton.addEventListener('click', ()=>{
+  currentQuestionIndex++;
+  setNextQuestion();
+});
 function startGame() {
   console.log('started');
   startButton.classList.add('hide');
@@ -44,6 +47,13 @@ function selectAnswer(e) {
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct);
   });
+  if(shuffledQuestions.length>currentQuestionIndex+1){
+    nextButton.classList.remove('hide');
+  } else {
+    startButton.innerText='Restart';
+    startButton.classList.remove('hide');
+  }
+
 
 };
 
@@ -70,10 +80,76 @@ function resetState() {
 
 const questions=[
   {
-    question: 'What is 2+2?',
+    question: 'The river Seine in Paris is longer than the river Thames in London',
     answers: [
-      {text: '4', correct: true},
-      {text: '22', correct: false}
+      {text: 'Yes', correct: true},
+      {text: 'No', correct: false}
     ]
-  }
+  },
+
+  {
+    question: 'Madonna\'s real name is Madonna',
+    answers: [
+      {text: 'Yes', correct: true},
+      {text: 'No', correct: false}
+    ]
+  },
+
+  {
+    question: 'Cinderella was the first Disney princess',
+    answers: [
+      {text: 'Yes', correct: false},
+      {text: 'No', correct: true}
+    ]
+  },
+
+  {
+    question: 'In Harry Potter, Draco Malfoy has no siblings',
+    answers: [
+      {text: 'Yes', correct: false},
+      {text: 'No', correct: true}
+    ]
+  },
+
+  {
+    question: 'There are 219 episodes of Friends',
+    answers: [
+      {text: 'Yes', correct: false},
+      {text: 'No', correct: true}
+    ]
+  },
+
+  {
+    question: 'A lion\'s roar can be heard up to eight kilometres away',
+    answers: [
+      {text: 'Yes', correct: true},
+      {text: 'No', correct: false}
+    ]
+  },
+
+  {
+    question: 'Monaco is the smallest country in the world',
+    answers: [
+      {text: 'Yes', correct: false},
+      {text: 'No', correct: true}
+    ]
+  },
+
+  {
+    question: "Idina Menzel sings 'let it go' 20 times in 'Let It Go' from Frozen",
+    answers: [
+      {text: 'Yes', correct: false},
+      {text: 'No', correct: true}
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
 ]
