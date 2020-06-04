@@ -52,6 +52,7 @@ body.wrong {
   padding: 5px 10px;
   color: white;
   outline: none;
+  cursor: pointer;
 }
 
 .btn:hover {
