@@ -1,5 +1,5 @@
 # Quiz-App
-Simple web app that demonstrates T/F questions, when the user clicks on buttons, it will show the correct answers in green and wrong ones in red.
+A simple web app that demonstrates T/F questions, when the user clicks on buttons, it will show the correct answers in green and wrong ones in red.
 
 
 # Demo
